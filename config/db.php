@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=docker-lemp-app_db_1;dbname=appdb',
-    'username' => 'root',
-    'password' => 'p@assw0rd!',
+    'dsn' => 'mysql:host=lamp-database;dbname=docker',
+    'username' => 'docker',
+    'password' => 'docker',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)

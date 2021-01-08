@@ -46,7 +46,7 @@ AppAsset::register($this);
                         'linkOptions' => ['style' => 'color: #fff;']];
     } else {
         $menuItems[] = ['label' => 'Rest Dokumentasi', 'url' => ['/site/about'], 'linkOptions' => ['style' => 'color: #fff;']];
-        $menuItems[] = ['label' => 'Client-Rest', 'url' => 'http://http://34.123.112.166/client/web', 'linkOptions' => ['style' => 'color: #fff;']];
+        $menuItems[] = ['label' => 'Client-Rest', 'url' => 'http://http://34.123.112.166/rest-client/web', 'linkOptions' => ['style' => 'color: #fff;']];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(

@@ -7,6 +7,7 @@ use yii\base\NotSupportedException;
 use yii\filters\auth\HttpBasicAuth;
 use yii\filters\auth\HttpBearerAuth;
 use yii\filters\auth\QueryParamAuth;
+use yii\web\UnauthorizedHttpException;
 
 /**
  * Class AuthMethodsFromParamsHelper provide useful method to create your compositeAuth authMethods from application parameter
@@ -46,10 +47,17 @@ class AuthMethodsFromParamsHelper
      * 
      * @return array the array representation of the object
      */
+    public function handleFailure(){
+
+    header ('Access-Control-Allow-Origin *');
+    header('Access-Control-Allow-Headers X-Requested-With,Content-Type,x_requested_with');
+    throw new UnauthorizedHttpException("Your request made with invalid credentials");
+    }
+    
     private function getAuthMethods(){
         $authMethodsArray = null;
         if(Yii::$app->params['useHttpBasicAuth']) $authMethodsArray[] = HttpBasicAuth::class;
-       // if(Yii::$app->params['useHttpBearerAuth']) $authMethodsArray[] = HttpBearerAuth::class;
+        if(Yii::$app->params['useHttpBearerAuth']) $authMethodsArray[] = HttpBearerAuth::class;
         if(Yii::$app->params['useQueryParamAuth']) $authMethodsArray[] = QueryParamAuth::class;
         if($authMethodsArray == null) throw new NotSupportedException('You must choose at least one auth methods, configure your app\config\params.php for more options.');
         return $authMethodsArray;

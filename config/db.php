@@ -2,7 +2,7 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=mysql;dbname=rest-app',
+    'dsn' => 'mysql:host=docker-lemp-app_db_1;dbname=rest-app',
     'username' => 'root',
     'password' => 'p@assw0rd!',
     'charset' => 'utf8',

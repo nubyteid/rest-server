@@ -60,7 +60,7 @@ $config = [
         //     'rules' => [
         //         'GET,HEAD users' => 'user/index',
         //     ],
-        ],
+        // ],
         'authClientCollection' => [
             'class' => 'yii\authclient\Collection',
             'clients' => [

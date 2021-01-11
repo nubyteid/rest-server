@@ -18,4 +18,25 @@ class Buku extends ActiveRecord
             [['idBuku', 'judul', 'idPengarang', 'idPenerbit'], 'string']
         ];
     }
+
+    public function getPenerbit()
+    {
+        return $this->hasOne(Penerbit::className(), ['idPenerbit' => 'idPenerbit']);
+    }
+
+    public function getPengarang()
+    {
+        return $this->hasOne(Pengarang::className(), ['id' => 'idPengarang']);
+    }
+
+    public function extraFields()
+    {
+        return [
+        'penerbit',
+        'pengarang'];
+    }
+
+
+
+    
 }

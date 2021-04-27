@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=lamp-database;dbname=docker',
-    'username' => 'docker',
-    'password' => 'docker',
+    'dsn' => 'mysql:host=localhost;dbname=bansos-db',
+    'username' => 'bansos',
+    'password' => 'bansosbismillah',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)

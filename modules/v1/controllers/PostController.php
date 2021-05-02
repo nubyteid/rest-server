@@ -2,7 +2,7 @@
 
 namespace app\modules\v1\controllers;
 
-use app\helpers\BehaviorsFromParamsHelper;
+//use app\helpers\BehaviorsFromParamsHelper;
 use yii\rest\ActiveController;
 
 /*
